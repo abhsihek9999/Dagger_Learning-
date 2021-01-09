@@ -7,4 +7,6 @@ interface CarComponent {
 
     fun getCar():Car
 
+    fun inject(mainActivity: MainActivity)
+
 }
