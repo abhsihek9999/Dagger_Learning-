@@ -1,8 +1,9 @@
 package com.example.dependency_codin_inflow
 
 import dagger.Component
+import dagger.Module
 
-@Component
+@Component(modules = [CarProvider::class])
 interface CarComponent {
 
     fun getCar():Car
