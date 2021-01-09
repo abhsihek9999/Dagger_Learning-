@@ -3,11 +3,14 @@ package com.example.dependency_codin_inflow
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
+import kotlin.properties.Delegates
 
 @Module
-abstract class DieselEngineModule{
+ class DieselEngineModule(var horsePower : Int){
 
-    @Binds
-    abstract fun bindsEngine(petrolEngine: DieselEngine) : Engine
+    @Provides
+     fun providesEngine() : Engine{
+        return DieselEngine(horsePower)
+    }
 
 }
